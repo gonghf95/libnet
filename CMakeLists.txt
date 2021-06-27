@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(libnet C CXX)
+
+set(CXX_FLAGS
+    -g
+    -Wall
+    -std=c++11
+)
+
+string(REPLACE ";" " " CMAKE_CXX_FLAGS "${CXX_FLAGS}")
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
+include_directories(${PROJECT_SOURCE_DIR})
+
+message(STATUS "EXECUTABLE_OUTPUT_PATH:${EXECUTABLE_OUTPUT_PATH}")
+message(STATUS "LIBRARY_OUTPUT_PATH:${LIBRARY_OUTPUT_PATH}")
+message(STATUS "CMAKE_BINARY_DIR:${CMAKE_BINARY_DIR}")
+message(STATUS "CMAKE_BUILD_TYPE:${CMAKE_BUILD_TYPE}")
+
+add_subdirectory(src)
