@@ -1,4 +1,5 @@
 set(net_SRCS
+ entity_system.cc
  entity.cc
  component.cc
 )
