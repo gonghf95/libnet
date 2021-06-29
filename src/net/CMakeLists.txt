@@ -1,4 +1,6 @@
 set(net_SRCS
+ test_c_update.cc
+ test_entity.cc
  entity_system.cc
  entity.cc
  component.cc

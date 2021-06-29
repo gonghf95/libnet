@@ -3,33 +3,33 @@
 
 class ISystem
 {
-public:
-    virtual ~ISystem() = default;
-
 protected:
-    ISystem() = default;
+	ISystem() = default;
+
+public:
+	virtual ~ISystem() = default;
 };
 
 class IInitializeSystem : virtual public ISystem
 {
-public:
-    virtual ~IInitializeSystem() = default;
-
-    virtual void Initialize() = 0;
-
 protected:
-    IInitializeSystem() = default;
+	IInitializeSystem() = default;
+
+public:
+	virtual ~IInitializeSystem() = default;
+
+	virtual void Initialize() = 0;
 };
 
 class IUpdateSystem : virtual public ISystem
 {
-public:
-    virtual ~IUpdateSystem() = default;
-
-    virtual void Update() = 0;
-
 protected:
-    IUpdateSystem() = default;
+	IUpdateSystem() = default;
+
+public:
+	virtual ~IUpdateSystem() = default;
+
+	virtual void Update() = 0;
 };
 
 #endif

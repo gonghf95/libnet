@@ -8,7 +8,7 @@
 class EntitySystem
 {
 public:
-    virtual ~EntitySystem();
+    virtual ~EntitySystem() = default;
 
     template <typename T, typename... TArgs>
     T *CreateComponent(TArgs &&...args);
@@ -25,12 +25,12 @@ T *EntitySystem::CreateComponent(TArgs &&...args)
 {
     auto component = new T(std::forward<TArgs>(args)...);
 
-    const auto objInit = dynamic_cast<IInitializeSystem *>(component);
-    if (objInit != nullptr)
-    {
-        initializeSystems_.push_back(objInit);
-        return component;
-    }
+    // const auto objInit = dynamic_cast<IInitializeSystem *>(component);
+    // if (objInit != nullptr)
+    // {
+    //     initializeSystems_.push_back(objInit);
+    //     return component;
+    // }
 
     const auto objUpdate = dynamic_cast<IUpdateSystem *>(component);
     if (objUpdate != nullptr)
