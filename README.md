@@ -1,2 +1,1 @@
-# libserver
-a simple server
+# libnet
